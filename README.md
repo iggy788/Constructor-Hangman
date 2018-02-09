@@ -66,3 +66,39 @@ The completed game should meet the following criteria:
 6. After the user wins/loses the game should automatically choose another word and make the user play it.
 
 ![Hangman Cli](Images/ron.gif)
+- - -
+### Install These Packages
+1. npm init --y
+    * npm init -y sets up a project with defaults, that is pretty useful for test projects or prototyping and initialize a `package.json` file for your project.
+2. npm install --save
+    * npm install will install all modules listed as dependencies in package.json
+3. npm install inquirer --save
+   * [Inquirer](https://www.npmjs.com/package/inquirer)
+```
+var inquirer = require('inquirer');
+inquirer.prompt([/* Pass your questions in here */]).then(answers => {
+    // Use user feedback for... whatever!!
+});
+```
+4. npm install prompt --save
+   * [Prompt](https://www.npmjs.com/package/prompt)
+```
+  var prompt = require('prompt');
+
+  //
+  // Start the prompt
+  //
+  prompt.start();
+
+  //
+  // Get two properties from the user: username and email
+  //
+  prompt.get(['username', 'email'], function (err, result) {
+    //
+    // Log the results.
+    //
+    console.log('Command-line input received:');
+    console.log('  username: ' + result.username);
+    console.log('  email: ' + result.email);
+  });
+  ```
