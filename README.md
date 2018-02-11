@@ -1,6 +1,7 @@
 # Constructor-Hangman
 - - -
 ## Overview
+“A wise man told me don't argue with fools. Cause people from a distance can't tell who is who.”
 ### Creating a hangman command-line game using constructor functions.
 ![Hangman Cli](Images/01-Hangman-Cli.gif)
 - - -
