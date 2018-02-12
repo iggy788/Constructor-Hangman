@@ -56,7 +56,7 @@ function getUserGuess(word) {
     .then(function(guess) {
       console.log(guess.letter.toLowerCase());
       word.letterInWord(guess.letter.toLowerCase());
-      console.log('word.letterInWord: ' + word.letterInWord);
+      console.log('word.letterInWord: ' + word.letterInWord(guess.letter.toLowerCase()));
       word.display();
 
 		if (!word.guessed) {

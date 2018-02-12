@@ -21,20 +21,26 @@ function Word(word) {
 		this.guessesRemaining--;
 		// word.guessed will be set to true when all the letters have been guessed.
 		this.guessed = letters.every(function (letter) {
+			// console.log('this.guessed: ' + word.guessed);
 			// checks if the letter is in the word. If it is in the word, then sets guessed property to true.
 			if (userGuess === letter.name) {
+				console.log('letter.name: ' + letter.name);
 				letter.guessed = true;
+				console.log('letter.guessed: ' + letter.guessed);
 			}
 			return letter.guessed;
 		});
 	};
+	console.log('this.letterInWord: ' + this.letterInWord);
+
 
   // for displaying the word on console
   this.display = function() {
     var string = '';
     letters.forEach(function(letter) {
       string += letter.display();
-    });
+	});
+	// console.log('letter.display(): ' + letter.display());
     console.log(
       'Guess the Character\n' +
         string +
