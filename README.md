@@ -1,8 +1,5 @@
 # Constructor-Hangman
 - - -
-### Creating a hangman command-line game using constructor functions.
-![Hangman Cli](Images/01-Hangman-Cli.gif)
-- - -
 ## Parks and Rec Hangman Game
 ### Guess the Parks and Rec Character!
 ![Hangman Cli](Images/ben.gif)
@@ -33,3 +30,5 @@
     * npm install will install all modules listed as dependencies in package.json
 3. npm install inquirer --save
    * [Inquirer](https://www.npmjs.com/package/inquirer)
+4. npm install prompt --save
+   * [Prompt](https://www.npmjs.com/package/prompt)
