@@ -1,39 +1,47 @@
 var Letter = require('./Letter.js');
+// export Word Constructor function
+function Word(word) {
+  // array of letter objects
+  var letters = [];
+  var wordArray = word.split('');
+  console.log('word: ' + word);
+  // console.log('wordArray: ' + wordArray);
 
-function Word(randWord){
-    this.arrayWord = randWord.split('');
-	this.spots = [];
-	this.right = false;
-	this.underScore = function () {
-		for (i = 0; i < this.arrayWord.length; i++) {
-			this.spots.push(new Letter(this.arrayWord[i]).inputLetter);
-		}
-	};
+  // pushing Letter Objects into Word Object's letter array.
+  wordArray.forEach(function(wordLetter) {
+    letters.push(new Letter(wordLetter));
+  });
+  // maximum allowed guesses
+  this.guessesRemaining = 10;
+  // default value is false. it should be set to true when the whole word is guessed.
+  this.guessed = false;
 
-	/*
-		this.createLetters = function(randWord) {
-		for (i = 0; i < this.arrayWord.length; i++) {
-			this.spots.push(new Letter(this.arrayWord[i]));
-		}
-	};
-	this.letterGuess = function(letterGuess) {
-		for (i = 0; i < this.spots.length; i++) {
-			if (this.spots[i].letter === letterGuess) {
-				this.right = true;
-				this.spots[i].guessed = true;
+// does all the processing if the letter is in the word
+	this.letterInWord = function (userGuess) {
+		this.guessesRemaining--;
+		// word.guessed will be set to true when all the letters have been guessed.
+		this.guessed = letters.every(function (letter) {
+			// checks if the letter is in the word. If it is in the word, then sets guessed property to true.
+			if (userGuess === letter.name) {
+				letter.guessed = true;
 			}
-		}
-		if (this.spots.every(function(letter) {
-				return letter.guessed;
-			})) return true;
+			return letter.guessed;
+		});
 	};
-	this.showBlanks = function(spots) {
-		let string = '';
-		for (i = 0; i < this.spots.length; i++) {
-			string += this.spots[i].letterGuessed();
-		}
-		console.log(string);
-	};
-	*/
+
+  // for displaying the word on console
+  this.display = function() {
+    var string = '';
+    letters.forEach(function(letter) {
+      string += letter.display();
+    });
+    console.log(
+      'Guess the Character\n' +
+        string +
+        '\nGuesses remaining: ' +
+        this.guessesRemaining
+    );
+  };
 }
+
 module.exports = Word;
