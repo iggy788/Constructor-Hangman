@@ -1,6 +1,5 @@
 # Constructor-Hangman
-- - -
-## Parks and Rec Hangman Game
+## Super Hard Parks and Rec Hangman Game
 ### Guess the Parks and Rec Character!
 ![Hangman Cli](Images/ben.gif)
 - - -
@@ -13,13 +12,13 @@
 
    * If the word is `ben`, display it like this when the game starts: `_ _ _`.
 
-   * As the user guesses the correct letters, reveal them: `b _ _ `.
+   * As the user guesses the correct letters, reveal them: `b _ _`.
+
+   * In order to win, you have to guess the character's name in the correct spelling.
 
 4. Number of Guesses Remaining: (# of guesses remaining for the user).
 
-5. Letters Already Guessed: (Letters the user has guessed, displayed like `L Z Y H`).
-
-6. After the user wins/loses the game should automatically choose another word and make the user play it.
+5. After you wins/loses the game will automatically choose another word and make the user play it.
 
 ![Hangman Cli](Images/ron.gif)
 - - -
