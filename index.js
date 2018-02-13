@@ -54,24 +54,24 @@ function getUserGuess(word) {
       },
     ])
     .then(function(guess) {
-      console.log(guess.letter.toLowerCase());
+		// calls the method which does the processing after checking if the letter is in the word
+    //   console.log(guess.letter.toLowerCase());
       word.letterInWord(guess.letter.toLowerCase());
-      console.log('word.letterInWord: ' + word.letterInWord(guess.letter.toLowerCase()));
+    // console.log('word.letterInWord: ' + word.letterInWord(guess.letter.toLowerCase()));
       word.display();
 
 		if (!word.guessed) {
-        // console.log(word.guessed);
+        console.log(word.guessed);
         if (word.guessesRemaining > 0) {
-        //   console.log(word.guessesRemaining);
-			getUserGuess(word);
-
-        } else if (word.guessed) {
+          //   console.log(word.guessesRemaining);
+          getUserGuess(word);
+        } else {
+          console.log('\nBOOOOOO, YOU LOSE!');
+			startGame();
+			}
+		} else if (word.guessed) {
 			console.log('\nCONGRATULATIONS YOU GUESSED THE CHARACTER!');
 			startGame();
-        } else {
-			console.log('\nBOOOOOO, YOU LOSE!');
-			startGame();
-        }
       }
     });
 }

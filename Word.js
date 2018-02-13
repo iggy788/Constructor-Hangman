@@ -4,13 +4,17 @@ function Word(word) {
   // array of letter objects
   var letters = [];
   var wordArray = word.split('');
-  console.log('word: ' + word);
-  // console.log('wordArray: ' + wordArray);
+//   console.log('word: ' + word);
+//   console.log('wordArray: ' + wordArray);
 
   // pushing Letter Objects into Word Object's letter array.
   wordArray.forEach(function(wordLetter) {
-    letters.push(new Letter(wordLetter));
+	  letters.push(new Letter(wordLetter));
+	  console.log(letters);
+	  console.log('wordLetter in Word.js ' + wordLetter);
+	  console.log(Letter.name);
   });
+
   // maximum allowed guesses
   this.guessesRemaining = 10;
   // default value is false. it should be set to true when the whole word is guessed.
@@ -19,21 +23,19 @@ function Word(word) {
 // does all the processing if the letter is in the word
 	this.letterInWord = function (userGuess) {
 		this.guessesRemaining--;
+		console.log('userGuess: ' + userGuess);
 		// word.guessed will be set to true when all the letters have been guessed.
-		this.guessed = letters.every(function (letter) {
-			// console.log('this.guessed: ' + word.guessed);
-			// checks if the letter is in the word. If it is in the word, then sets guessed property to true.
-			if (userGuess === letter.name) {
-				console.log('letter.name: ' + letter.name);
-				letter.guessed = true;
-				console.log('letter.guessed: ' + letter.guessed);
-			}
-			return letter.guessed;
-		});
-	};
-	console.log('this.letterInWord: ' + this.letterInWord);
-
-
+		this.guessed = letters.every(function(letter) {
+      	console.log('word.guessed: ' + word.guessed);
+      // checks if the letter is in the word. If it is in the word, then sets guessed property to true.
+      if (userGuess === letter.name) {
+        console.log('letter.name: ' + wordLetter);
+        letter.guessed = true;
+        console.log('letter.guessed: ' + letter.guessed);
+      }
+      return letter.guessed;
+    });
+};
   // for displaying the word on console
   this.display = function() {
     var string = '';
