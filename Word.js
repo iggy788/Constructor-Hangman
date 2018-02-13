@@ -12,12 +12,10 @@ console.log('word: ' + word);
 
   this.guessed = false;
 
-// This was meant to do all the processing if the letter is in the word; however, I couldn't get the userGuess to be added to the Word constructor in order for it to be checked against the random
+// This was meant to do all the processing if the letter is in the word; however, I couldn't get the userGuess to be added to the Word constructor in any order for it to be checked against the random, but it does work if you guess the random word in order.
 	this.letterInWord = function (userGuess) {
     this.guessesRemaining--;
-	console.log(userGuess);
 		this.guessed = letters.every(function (letter) {
-		console.log(letter.name.toLowerCase());
       if (userGuess === letter.name.toLowerCase()) {
         letter.guessed = true;
       }
@@ -26,7 +24,7 @@ console.log('word: ' + word);
   };
   this.display = function() {
     var string = '';
-	  letters.forEach(function(letter, index) {
+	  letters.forEach(function(letter) {
       string += letter.display();
     });
     console.log(
