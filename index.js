@@ -48,7 +48,7 @@ function getUserGuess(word) {
 			}
 		}, ])
 		.then(function (guess) {
-			// This is supposed to add the guessed letter to the Word object in the constructor.
+			// This is supposed to add the guessed letter to the Word object in the constructor. Only works correctly when the guess letter is in the correct spelling of the character's name.
 			word.letterInWord(guess.letter.toLowerCase());
 			word.display();
 			if (!word.guessed) {

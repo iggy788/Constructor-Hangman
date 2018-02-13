@@ -31,3 +31,5 @@
    * [Inquirer](https://www.npmjs.com/package/inquirer)
 4. npm install prompt --save
    * [Prompt](https://www.npmjs.com/package/prompt)
+5. npm install chalk --save
+   * [Chalk](https://www.npmjs.com/package/chalk)
